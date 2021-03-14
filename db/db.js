@@ -1,7 +1,15 @@
-const database = [];
+const dbs = {};
+
+function getTable(entityName) {
+    return dbs[entityName];
+}
 
 function dbFactory(entityName, entityKeys) {
-    entityName = 'Contact';
+    if (dbs[entityName]) {
+        return entityName;
+    }
+
+    const database = [];
 
     function read(callback) {
         callback(null, database);
@@ -48,7 +56,8 @@ function dbFactory(entityName, entityKeys) {
         callback(null, database.filter(filterExpression));
     }
 
-    return {
+    dbs[entityName] = {
+        entityName,
         read,
         create,
         update,
@@ -56,5 +65,11 @@ function dbFactory(entityName, entityKeys) {
         filter
     }
 
+    return entityName;
+
+
 }
-module.exports = dbFactory;
+module.exports = {
+    dbFactory,
+    getTable
+}

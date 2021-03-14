@@ -1,5 +1,5 @@
 const express = require('express');
-
+const db = require('./db/db');
 const defaults = {
     endpoint: '',
     middlewares: {
@@ -8,17 +8,25 @@ const defaults = {
     }
 }
 
+const controllers = {};
+
+function getController(ctrlName) {
+    return controllers[ctrlName];
+}
 /**
  * 
- * @param {{endpoint: string, db: object, middlewares: {get: [{}], post: [{}]}}} settings 
+ * @param {{endpoint: string, tableName: string, middlewares: {get: [{}], post: [{}]}}} settings 
  */
-function crudFactory(settings) {
+function crudFactory(_settings) {
+    if (controllers[_settings.tableName]) {
+        return;
+    }
     const crud = express.Router();
 
-    settings = Object.assign(defaults, settings);
+    const settings = { ...Object.assign(defaults, _settings) };
 
     crud.get(settings.endpoint, function (req, res) {
-        settings.db.read(function (err, data) {
+        db.getTable(settings.tableName).read(function (err, data) {
             if (err) return res.status(500).send();
 
             res.json(data);
@@ -28,8 +36,8 @@ function crudFactory(settings) {
 
     crud.get(`${settings.endpoint}/:id`, function (req, res) {
         const prediction = e => e.id === +req.params.id;
-        
-        settings.db.filter(prediction, function (err, data) {
+
+        db.getTable(settings.tableName).filter(prediction, function (err, data) {
             if (err) return res.status(500).send();
 
             res.json(data);
@@ -38,7 +46,7 @@ function crudFactory(settings) {
 
     crud.post(settings.endpoint, function (req, res) {
         const postData = req.body;
-        settings.db.create(postData, function (err, data) {
+        db.getTable(settings.tableName).create(postData, function (err, data) {
             if (err) return res.status(500).send(err);
 
             res.status(201).json(data);
@@ -47,7 +55,7 @@ function crudFactory(settings) {
 
     crud.put(settings.endpoint, function (req, res) {
         const postData = req.body;
-        settings.db.update(postData, function (err, success) {
+        db.getTable(settings.tableName).update(postData, function (err, success) {
             if (err) return res.status(500).send();
 
             res.status(200).json(success);
@@ -56,14 +64,18 @@ function crudFactory(settings) {
 
     crud.delete(settings.endpoint, function (req, res) {
         const { id } = req.query;
-        settings.db.remove(id, function (err, data) {
+        db.getTable(settings.tableName).remove(id, function (err, data) {
             if (err) return res.status(500).send();
 
             res.status(204).send();
         });
     });
+    crud.tableName = settings.tableName;
+    controllers[settings.tableName] = crud;
 
-    return crud;
 }
 
-module.exports = crudFactory;
+module.exports = {
+    crudFactory,
+    getController
+}

@@ -1,4 +1,6 @@
 const express = require('express');
+const db = require('./db/db');
+const crud = require('./crud');
 
 // configurations
 const PORT = 14700;
@@ -7,19 +9,19 @@ const app = express();
 app.use(express.json());
 
 // my modules imports
-const contactDb = require('./db/contact.db')();
-const companyDb = require('./db/company.db')();
-const quoteDb = require('./db/quote.db')();
+crud.crudFactory({
+    tableName: db.dbFactory('contact')
+});
+crud.crudFactory({
+    tableName: db.dbFactory('company')
+});
+crud.crudFactory({
+    tableName: db.dbFactory('quote')
+});
 
-const contact = require('./crud')({
-    db: contactDb
-});
-const company = require('./crud')({
-    db: companyDb
-});
-const quote = require('./crud')({
-    db: quoteDb
-});
+const contact = crud.getController('contact');
+const company = crud.getController('company');
+const quote = crud.getController('quote');
 
 app.use('/contact', contact);
 app.use('/company', company);
