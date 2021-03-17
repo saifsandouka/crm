@@ -54,6 +54,8 @@ To retrieve specific records based on their unique ID.
 ### Page (integer, optional)
 To get the list of records from the respective pages.
 
+*example*: http://localhost:4444/crm/v1/contact?page=2
+
 **Possible values**: Positive Integer values only.
 
 *Default value for page is 1.*
@@ -61,6 +63,8 @@ To get the list of records from the respective pages.
 
 ### per_page (integer, optional)
 To get the list of records available per page.
+
+*example*: http://localhost:4444/crm/v1/contact?per_page=20
 
 **Possible values**: Positive Integer values only.
 
