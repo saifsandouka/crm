@@ -99,3 +99,5 @@ function Contact() {
     this.Zip_Code = null;
     this.Country = null;
 }
+
+module.exports = Contact;

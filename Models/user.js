@@ -31,3 +31,5 @@ function User() {
      */
     this.status = null;
 }
+
+module.exports = User;
