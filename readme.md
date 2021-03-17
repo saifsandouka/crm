@@ -38,6 +38,8 @@ http://localhost:4444/crm/v1/{module_api_name}/{record_id}
 ### Fields (string, optional)
 To retrieve specific field values.
 
+*example*: http://localhost:4444/crm/v1/contact/1?fields=Last_Name,Email 
+
 **Possible values**: Comma separated field API names. Example: Last_Name,Email
 
 
