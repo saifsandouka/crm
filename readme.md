@@ -132,3 +132,6 @@ for example: `db/contacts.json`, `db/accounts.json`
 
 # Authentication
 
+## login
+POST /login  -body { "user": "abc", "pass": "abc"}
+s

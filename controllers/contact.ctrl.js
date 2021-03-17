@@ -25,8 +25,7 @@ router.post('/', function (req, res) {
         const newContact = new Contact({
             Contact_Id: Math.floor(Math.random() * 1000000),
             Contact_Owner: req.User_Id,
-            First_Name: req.body.First_Name,
-            Last_Name: req.body.Last_Name
+            ...req.body
         });
 
         contactsDb.push(newContact);
