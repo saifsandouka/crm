@@ -8,8 +8,10 @@
 ## The API
 A record is an entity which stores all the combined information of a particular contact or company.
 
+
 ### Purpose
 To get the list of available records from a module.
+
 
 ### Endpoints
 * `GET /{module_api_name}`
@@ -18,10 +20,12 @@ To get the list of available records from a module.
 * `PUT /{module_api_name}/{record_id}`
 * `DELETE /{module_api_name}/{record_id}`
 
+
 ### Request URL
 http://localhost:4444/crm/v1/{module_api_name}
 
 http://localhost:4444/crm/v1/{module_api_name}/{record_id}
+
 
 ### The available modules:
 -	Accounts
@@ -30,15 +34,18 @@ http://localhost:4444/crm/v1/{module_api_name}/{record_id}
 
 
 ### Query Parameters
+
 #### Fields (string, optional)
 To retrieve specific field values.
 
 **Possible values**: Comma separated field API names. Example: Last_Name,Email
 
+
 #### Ids (string, optional)
 To retrieve specific records based on their unique ID.
 
 **Possible values**: Valid unique IDs of records. Example:  415,086,800, 1,194,419
+
 
 #### Page (integer, optional)
 To get the list of records from the respective pages.
@@ -47,12 +54,14 @@ To get the list of records from the respective pages.
 
 *Default value for page is 1.*
 
+
 #### per_page (integer, optional)
 To get the list of records available per page.
 
 **Possible values**: Positive Integer values only.
 
 *Default value for page is 200.*
+
 
 ### HTTP Statuses
 * INVALID_MODULE HTTP **400**
@@ -72,15 +81,18 @@ Permission denied to read
 
 *Resolution*: The user does not have permission to read records data.
 
+
 * INTERNAL_ERROR HTTP **500**
 Internal Server Error
 
 *Resolution*: Unexpected and unhandled exception in Server.
 
+
 * INVALID_REQUEST_METHOD HTTP **400**
 The http request method type is not a valid one
 
 *Resolution*: You have specified an invalid HTTP method to access the API URL. Specify a valid request method. Refer to endpoints section above.
+
 
 * PATTERN_NOT_MATCHED HTTP **400**
 Please check whether the input values are correct
@@ -88,26 +100,34 @@ Please check whether the input values are correct
 *Resolution*: The value specified for one of the parameters is incorrect. Refer to parameters section above and specify valid parameter values.
 
 
+
+
 ## The objects
 ### Contact
 [Contact object function](Models/contact.js)
 
+
 ### Account
 [Account object function](Models/contact.js)
 
+
 ### User
 [User object function](Models/user.js)
+
 
 
 ## Server api response examples
 ### Contact
 [Contact example responses](example-responses/contact.js)
 
+
 ### Account
 [Account example responses](example-responses/contact.js)
 
+
 ### User
 [User example responses](example-responses/user.js)
+
 
 
 
