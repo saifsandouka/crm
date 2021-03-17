@@ -1,4 +1,10 @@
 function Contact() {
+     /**
+     * Contact id
+     *
+     * @type {int}
+     */
+    this.Contact_Id = null;
     /**
      * CRM user to whom the contact is assigned.
      *
@@ -24,12 +30,6 @@ function Contact() {
      */
     this.Last_Name = null;
     /**
-     * Select the account related to the contact.
-     *
-     * @type {int}
-     */
-    this.Account_Id = null;
-    /**
      * Specify the birthday of the contact to send greetings for a better relationship.
      *
      * @type {Date}
@@ -40,7 +40,7 @@ function Contact() {
      *
      * @type {Date}
      */
-         this.Last_Login = null;
+    this.Last_Login = null;
     /**
      * Phone number of the contact.
      *
