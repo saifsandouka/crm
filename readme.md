@@ -68,7 +68,7 @@ To get the list of records available per page.
 
 **Possible values**: Positive Integer values only.
 
-*Default value for page is 200.*
+*Default value for page is 10.*
 
 
 ## HTTP Statuses
