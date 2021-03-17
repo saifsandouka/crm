@@ -111,7 +111,7 @@ Please check whether the input values are correct
 
 
 # The objects
-[Contact object function](Models/contact.js), [Account object function](Models/contact.js), [User object function](Models/user.js)
+[Contact object function](Models/contact.js), [Account object function](Models/account.js), [User object function](Models/user.js)
 
 
 

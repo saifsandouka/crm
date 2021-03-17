@@ -5,7 +5,7 @@ function Account() {
      *
      * @type {int}
      */
-         this.Account_Id = null;
+    this.Account_Id = null;
     /**
      * Specify the company name. This field is mandatory.
      *
