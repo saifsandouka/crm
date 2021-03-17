@@ -11,7 +11,16 @@ router.get('/:id', function (req, res) {
         if (contact.Contact_Owner !== req.User_Id)
             return res.status(403).send();
 
-        res.send(contact);
+        if (req.customQueryField) {
+            const ret = {};
+            for (let prop in contact) {
+                if (req.customQueryField.indexOf(prop) > -1)
+                    ret[prop] = contact[prop];
+            }
+            return res.send(ret);
+        } else {
+            res.send(contact);
+        }
     }
 })
 

@@ -5,6 +5,7 @@ process.env.SECRET_KEY = 'abc';
 
 // attributes / middlewares
 const authorizationAttribute = require('./attributes/authorization.attr');
+const fieldsQuery = require('./attributes/query.attribute').fieldsQuery;
 
 // controllers
 const loginCtrl = require('./controllers/login.ctrl');
@@ -17,9 +18,15 @@ const app = express();
 app.use(express.json());
 
 app.use('/login', loginCtrl);
-app.use('/contact', authorizationAttribute, contactCtrl);
-app.use('/account', authorizationAttribute, contactCtrl);
-app.use('/user', authorizationAttribute, contactCtrl);
+
+const middlewares = [
+    authorizationAttribute,
+    fieldsQuery
+];
+
+app.use('/contact', ...middlewares, contactCtrl);
+app.use('/account', ...middlewares, contactCtrl);
+app.use('/user', ...middlewares, contactCtrl);
 
 
 app.listen(PORT, () => console.log(`server started at port ${PORT}`));
