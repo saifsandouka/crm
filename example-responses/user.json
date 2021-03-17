@@ -1,0 +1,7 @@
+{
+    "User_Id": 123123123,
+    "Email": "some@mail.com",
+    "role": "user",
+    "profile": "A good user",
+    "status": "Active"
+}

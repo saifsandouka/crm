@@ -1,0 +1,15 @@
+{
+    "Account_Id": 123123123,
+    "Contact_Owner": 475,
+    "Account_Name": "Some account",
+    "Phone": "02-1122334",
+    "Website": "https://craftweb.co.il",
+    "Industry": "Technology",
+    "Account_Site": "Headquarters",
+    "Employees": 30,
+    "Fax": "02-1231231",
+    "Street": "Hakmei lublin",
+    "City": "Jerusalem",
+    "Zip_Code": 12312,
+    "Country": "Israel"
+}
