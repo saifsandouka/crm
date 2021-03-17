@@ -111,7 +111,7 @@ Please check whether the input values are correct
 
 # Server api response examples
 
-[Contact example responses](example-responses/contact.js), [Account example responses](example-responses/account.js), [User example responses](example-responses/user.js)
+[Contact example responses](example-responses/contact.json), [Account example responses](example-responses/account.json), [User example responses](example-responses/user.json)
 
 
 
