@@ -103,30 +103,13 @@ Please check whether the input values are correct
 
 
 ## The objects
-### Contact
-[Contact object function](Models/contact.js)
-
-
-### Account
-[Account object function](Models/contact.js)
-
-
-### User
-[User object function](Models/user.js)
+[Contact object function](Models/contact.js), [Account object function](Models/contact.js), [User object function](Models/user.js)
 
 
 
 ## Server api response examples
-### Contact
-[Contact example responses](example-responses/contact.js)
 
-
-### Account
-[Account example responses](example-responses/contact.js)
-
-
-### User
-[User example responses](example-responses/user.js)
+[Contact example responses](example-responses/contact.js), [Account example responses](example-responses/account.js), [User example responses](example-responses/user.js)
 
 
 
