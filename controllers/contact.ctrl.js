@@ -1,5 +1,6 @@
 const express = require('express');
 const contactsDb = require('./../db/db').contacts;
+const Contact = require('./../models/contact');
 
 const router = express.Router();
 
@@ -20,14 +21,20 @@ router.get('/', function (req, res) {
 })
 
 router.post('/', function (req, res) {
-    const newContact = {
-        Contact_Id: Math.floor(Math.random() * 1000000),
-        Contact_Owner: req.User_Id,
-        First_Name: req.body.First_Name,
-        Last_Name: req.body.Last_Name
-    };
-    contactsDb.push(newContact);
-    res.status(201).send(newContact);
+    try {
+        const newContact = new Contact({
+            Contact_Id: Math.floor(Math.random() * 1000000),
+            Contact_Owner: req.User_Id,
+            First_Name: req.body.First_Name,
+            Last_Name: req.body.Last_Name
+        });
+
+        contactsDb.push(newContact);
+        res.status(201).send(newContact);
+    }
+    catch (ex) {
+        res.status(400).send(ex.message);
+    }
 })
 
 module.exports = router;

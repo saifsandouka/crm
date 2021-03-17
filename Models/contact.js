@@ -1,22 +1,27 @@
 function Contact(args) {
+
+    if (args.First_Name && typeof args.First_Name !== 'string') {
+        throw new Error("Firstname must be a string");
+    }
+
     /**
      * The user id that own the contact
      *
      * @type {int}
      */
-    this.Contact_Owner = null;
+    this.Contact_Owner = args.Contact_Owner;
     /**
     * Contact id
     *
     * @type {int}
     */
-    this.Contact_Id = null;
+    this.Contact_Id = args.Contact_Id;
     /**
      * First name of the contact.
      *
      * @type {string}
      */
-    this.First_Name = null;
+    this.First_Name = args.First_Name;
     /**
      * The job position of the contact.
      *
