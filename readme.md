@@ -46,6 +46,8 @@ To retrieve specific field values.
 ### Ids (string, optional)
 To retrieve specific records based on their unique ID.
 
+*example*: http://localhost:4444/crm/v1/contact?id=1,2,3
+
 **Possible values**: Valid unique IDs of records. Example:  415,086,800, 1,194,419
 
 
