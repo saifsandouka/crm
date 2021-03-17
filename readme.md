@@ -1,6 +1,6 @@
 # CRM Full stack project
 ## Important
--   Every endpoint should have he's own file exported with Express.Router().
+-   Every endpoint should have he's own file exported with `express.Router()`.
 -	All the endpoint controller should be inside the same directory
 -	The API supports JSON format in request and response
 
