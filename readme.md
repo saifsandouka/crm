@@ -130,25 +130,3 @@ Please check whether the input values are correct
 Every object should have it's own file that cotains the the data. all the files should sit under the same directory
 for example: `db/contacts.json`, `db/accounts.json`
 
-# TBD
-
-## Modules:
-
-Notes, Deals, Campaigns, Leads, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price Books, Quotes, Sales Orders, Purchase Orders, Invoices, Custom, and Activities
-
-## Query params:
-
-•	include_child boolean, optional
-
-To include records from the child territories. Default is false.
-
-Possible values:true - include child territory records; false -does not include child territory records
-
-
-## Errors:
-•	NOT_SUPPORTED HTTP 403
-
-This API is supported only for admin users
-
-Resolution: Only admin users can fetch records from the Notes module.
-
