@@ -121,6 +121,14 @@ Please check whether the input values are correct
 
 
 
+##
+- Create for each module a controller.
+- Implement the `get` operation
+- Implemet the `post` operation. (Include validations)
+
+# The database
+Every object should have it's own file that cotains the the data. all the files should sit under the same directory
+for example: `db/contacts.json`, `db/accounts.json`
 
 # TBD
 
