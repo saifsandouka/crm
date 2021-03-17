@@ -130,3 +130,5 @@ Please check whether the input values are correct
 Every object should have it's own file that cotains the the data. all the files should sit under the same directory
 for example: `db/contacts.json`, `db/accounts.json`
 
+# Authentication
+

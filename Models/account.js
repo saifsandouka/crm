@@ -1,6 +1,12 @@
 
 function Account() {
     /**
+     * The user id that own the account
+     *
+     * @type {int}
+     */
+    this.Account_Owner = null;
+    /**
      * Specify the account id.
      *
      * @type {int}

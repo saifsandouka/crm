@@ -1,5 +1,5 @@
 
-function Users() {
+function User() {
     /**
      * Specify the user id.
      *

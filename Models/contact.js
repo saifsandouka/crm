@@ -1,9 +1,15 @@
 function Contact() {
-     /**
-     * Contact id
+    /**
+     * The user id that own the contact
      *
      * @type {int}
      */
+    this.Contact_Owner = null;
+    /**
+    * Contact id
+    *
+    * @type {int}
+    */
     this.Contact_Id = null;
     /**
      * First name of the contact.
