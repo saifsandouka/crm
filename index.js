@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/company', company);
+app.use('/contact', contactCtrl);
 
 
 app.listen(PORT, () => console.log(`server started at port ${PORT}`));
