@@ -6,6 +6,7 @@ function fieldsQuery(req, res, next) {
     next();
 }
 
+
 module.exports = {
     fieldsQuery
 }

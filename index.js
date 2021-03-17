@@ -5,7 +5,7 @@ process.env.SECRET_KEY = 'abc';
 
 // attributes / middlewares
 const authorizationAttribute = require('./attributes/authorization.attr');
-const fieldsQuery = require('./attributes/query.attribute').fieldsQuery;
+const quriesAttributes = require('./attributes/query.attribute');
 
 // controllers
 const loginCtrl = require('./controllers/login.ctrl');
@@ -21,7 +21,7 @@ app.use('/login', loginCtrl);
 
 const middlewares = [
     authorizationAttribute,
-    fieldsQuery
+    quriesAttributes.fieldsQuery
 ];
 
 app.use('/contact', ...middlewares, contactCtrl);
