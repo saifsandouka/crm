@@ -1,4 +1,4 @@
-function Contact() {
+function Contact(args) {
     /**
      * The user id that own the contact
      *
