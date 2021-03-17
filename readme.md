@@ -5,15 +5,15 @@
 -	The API supports JSON format in request and response
 
 
-## The API
+# The API
 A record is an entity which stores all the combined information of a particular contact or company.
 
 
-### Purpose
+## Purpose
 To get the list of available records from a module.
 
 
-### Endpoints
+## Endpoints
 * `GET /{module_api_name}`
 * `GET /{module_api_name}/{record_id}`
 * `POST /{module_api_name}`
@@ -21,33 +21,33 @@ To get the list of available records from a module.
 * `DELETE /{module_api_name}/{record_id}`
 
 
-### Request URL
+## Request URL
 http://localhost:4444/crm/v1/{module_api_name}
 
 http://localhost:4444/crm/v1/{module_api_name}/{record_id}
 
 
-### The available modules:
+## The available modules:
 -	Accounts
 -	Contacts
 -	Users
 
 
-### Query Parameters
+## Query Parameters
 
-#### Fields (string, optional)
+### Fields (string, optional)
 To retrieve specific field values.
 
 **Possible values**: Comma separated field API names. Example: Last_Name,Email
 
 
-#### Ids (string, optional)
+### Ids (string, optional)
 To retrieve specific records based on their unique ID.
 
 **Possible values**: Valid unique IDs of records. Example:  415,086,800, 1,194,419
 
 
-#### Page (integer, optional)
+### Page (integer, optional)
 To get the list of records from the respective pages.
 
 **Possible values**: Positive Integer values only.
@@ -55,7 +55,7 @@ To get the list of records from the respective pages.
 *Default value for page is 1.*
 
 
-#### per_page (integer, optional)
+### per_page (integer, optional)
 To get the list of records available per page.
 
 **Possible values**: Positive Integer values only.
@@ -63,7 +63,7 @@ To get the list of records available per page.
 *Default value for page is 200.*
 
 
-### HTTP Statuses
+## HTTP Statuses
 * INVALID_MODULE HTTP **400**
 The module name given seems to be invalid
 
@@ -102,25 +102,25 @@ Please check whether the input values are correct
 
 
 
-## The objects
+# The objects
 [Contact object function](Models/contact.js), [Account object function](Models/contact.js), [User object function](Models/user.js)
 
 
 
-## Server api response examples
+# Server api response examples
 
 [Contact example responses](example-responses/contact.js), [Account example responses](example-responses/account.js), [User example responses](example-responses/user.js)
 
 
 
 
-## TBD
+# TBD
 
-### Modules:
+## Modules:
 
 Notes, Deals, Campaigns, Leads, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price Books, Quotes, Sales Orders, Purchase Orders, Invoices, Custom, and Activities
 
-### Query params:
+## Query params:
 
 •	include_child boolean, optional
 
@@ -129,7 +129,7 @@ To include records from the child territories. Default is false.
 Possible values:true - include child territory records; false -does not include child territory records
 
 
-### Errors:
+## Errors:
 •	NOT_SUPPORTED HTTP 403
 
 This API is supported only for admin users
