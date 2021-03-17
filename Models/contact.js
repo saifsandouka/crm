@@ -6,12 +6,6 @@ function Contact() {
      */
     this.Contact_Id = null;
     /**
-     * CRM user to whom the contact is assigned.
-     *
-     * @type {int}
-     */
-    this.Contact_Owner = null;
-    /**
      * First name of the contact.
      *
      * @type {string}
