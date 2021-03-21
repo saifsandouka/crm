@@ -9,9 +9,9 @@ const PORT = 14700;
 const app = express();
 
 app.use(express.json());
-if (!process.env.prod) {
-    app.use(cors());
-}
+// if (!process.env.prod) {
+app.use(cors());
+// }
 
 app.use(express.static('./client'));
 

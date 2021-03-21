@@ -9,7 +9,7 @@ function Login() {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify(credentials)
-        }).then(res => res.json().then(jRes => console.log(jRes)));
+        }).then(res => res.text().then(jRes => window.localStorage.setItem('token', jRes)));
     }
 
     return <div>
