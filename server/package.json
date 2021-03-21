@@ -1,0 +1,25 @@
+{
+    "name": "crm-exercise",
+    "version": "1.0.0",
+    "description": "-   Every endpoint should have he's own file exported with `express.Router()`. -\tAll the endpoint controller should be inside the same directory -\tThe API supports JSON format in request and response",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YaakovHatam/crm.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/YaakovHatam/crm/issues"
+    },
+    "homepage": "https://github.com/YaakovHatam/crm#readme"
+}
