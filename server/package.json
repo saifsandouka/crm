@@ -4,11 +4,13 @@
     "description": "-   Every endpoint should have he's own file exported with `express.Router()`. -\tAll the endpoint controller should be inside the same directory -\tThe API supports JSON format in request and response",
     "main": "index.js",
     "dependencies": {
+        "cors": "^2.8.5",
         "express": "^4.17.1",
         "jsonwebtoken": "^8.5.1"
     },
     "devDependencies": {},
     "scripts": {
+        "start": "node index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
