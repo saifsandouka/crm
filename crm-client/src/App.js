@@ -1,8 +1,12 @@
 import Login from './components/login';
+import Contacts from './components/contacts';
 
 function App() {
     return (
-        <Login />
+        <>
+            <Contacts />
+            <Login />
+        </>
     );
 }
 
