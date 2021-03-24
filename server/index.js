@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const expressFileupload = require('express-fileupload');
 // variables
 process.env.SECRET_KEY = 'abc';
 process.env.prod = process.env.prod || false;
@@ -8,7 +9,9 @@ process.env.prod = process.env.prod || false;
 const PORT = 14700;
 const app = express();
 
+app.use(expressFileupload());
 app.use(express.json());
+
 // if (!process.env.prod) {
 app.use(cors());
 // }
@@ -30,6 +33,18 @@ const middlewares = [
     authorizationAttribute,
     quriesAttributes.fieldsQuery
 ];
+
+app.use('uploadFile', function (req, res) {
+    console.log(1);
+    if (req.files && req.files.length > 0) {
+        req.files['user_picture'].mv('./temp', function (err) {
+            if (err) {
+                return res.status(500).send();
+            }
+            res.send();
+        });
+    }
+})
 
 app.use('/contact', ...middlewares, contactCtrl);
 app.use('/account', ...middlewares, contactCtrl);
