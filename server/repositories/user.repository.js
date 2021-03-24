@@ -12,7 +12,7 @@ function getByLogin(email, pass) {
 }
 
 function getOwned(id) {
-    if (getById(id).role === 'admin') {
+    if (getById(id).role === 'Admin') {
         return usersDb.filter(u => u.User_Owner === id);
     }
     return null;

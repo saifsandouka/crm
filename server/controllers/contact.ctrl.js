@@ -33,7 +33,7 @@ router.get('/', function (req, res) {
         contacts = contactsDb.filter(c => ownedUsersIds.indexOf(c.Contact_Owner) > -1);
     }
 
-    contacts.concat(...contactsDb.filter(c => c.Contact_Owner === req.User_Id));
+    contacts = contacts.concat(...contactsDb.filter(c => c.Contact_Owner === req.User_Id));
 
     res.send(contacts);
 })
