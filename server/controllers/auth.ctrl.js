@@ -3,11 +3,13 @@ const jwt = require('jsonwebtoken');
 const uuid = require('uuid');
 const md5 = require('md5');
 
+const userRepository = require('./../repositories/user.repository');
+
 const router = express.Router();
 
 router.post('/login', function (req, res) {
     const { user, pass } = req.body;
-    const theUser = users.find(u => u.name === user && u.pass === md5(pass));
+    const theUser = userRepository.getByLogin(user, pass);
     if (theUser) {
         const token = jwt.sign({ User_Id: theUser.User_Id }, process.env.SECRET_KEY, {
             expiresIn: '5h'
@@ -21,14 +23,14 @@ router.post('/login', function (req, res) {
 
 router.post('/register', function (req, res) {
     const { user, pass } = req.body;
-    if (users.find(u => u.name === user)) {
-        return res.status(400).send('username already taken!');
+    try {
+        userRepository.add({
+            email: user,
+            pass: pass
+        });
+        res.status(201).send();
+    } catch (ex) {
+        return res.status(400).send(ex)
     }
-    users.push({
-        name: user,
-        pass: md5(pass),
-        User_Id: uuid.v4()
-    });
-    res.status(201).send();
 })
 module.exports = router;
