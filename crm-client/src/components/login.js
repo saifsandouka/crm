@@ -3,7 +3,7 @@ function Login() {
     const credentials = {};
     const setCredetntials = (type, value) => credentials[type] = value;
     const performLogin = () => {
-        fetch('http://localhost:14700/login', {
+        fetch('http://localhost:14700/auth/login', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

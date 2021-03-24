@@ -23,11 +23,11 @@ const authorizationAttribute = require('./attributes/authorization.attr');
 const quriesAttributes = require('./attributes/query.attribute');
 
 // controllers
-const loginCtrl = require('./controllers/login.ctrl');
+const authCtrl = require('./controllers/auth.ctrl');
 const contactCtrl = require('./controllers/contact.ctrl');
 
 
-app.use('/login', loginCtrl);
+app.use('/auth', authCtrl);
 
 const middlewares = [
     authorizationAttribute,
