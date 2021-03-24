@@ -5,7 +5,7 @@ function User() {
      *
      * @type {int}
      */
-    this.User_Owner = args.User_Owner;
+    this.User_Owner = null;
     /**
      * Specify the user id.
      *
@@ -36,6 +36,11 @@ function User() {
      * @type {('Active' | 'Deleted' | 'Freezed')}
      */
     this.status = null;
+    /**
+     * User hashed password
+     * @type {string}
+     */
+    this.Password = null;
 }
 
 module.exports = User;

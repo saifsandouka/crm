@@ -5,19 +5,6 @@ const md5 = require('md5');
 
 const router = express.Router();
 
-const users = [
-    {
-        name: 'abc',
-        pass: md5('abc'),
-        User_Id: 1
-    },
-    {
-        name: 'cde',
-        pass: 'cde',
-        User_Id: 2
-    }
-]
-
 router.post('/login', function (req, res) {
     const { user, pass } = req.body;
     const theUser = users.find(u => u.name === user && u.pass === md5(pass));
