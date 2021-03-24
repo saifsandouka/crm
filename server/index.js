@@ -36,8 +36,8 @@ const middlewares = [
 
 app.post('/upload', function (req, res) {
     console.log(1);
-    if (req.files && req.files.length > 0) {
-        req.files['user_picture'].mv('./temp', function (err) {
+    if (req.files && req.files.user_picture) {
+        req.files['user_picture'].mv(__dirname + '/uploads/' + req.files.user_picture.name, function (err) {
             if (err) {
                 return res.status(500).send();
             }
