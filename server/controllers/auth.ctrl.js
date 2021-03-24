@@ -1,7 +1,5 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const uuid = require('uuid');
-const md5 = require('md5');
 
 const userRepository = require('./../repositories/user.repository');
 

@@ -1,3 +1,6 @@
+const uuid = require('uuid');
+const md5 = require('md5');
+
 const usersDb = require('./../db/db').users;
 
 function getById(id) {
