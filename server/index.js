@@ -34,7 +34,7 @@ const middlewares = [
     quriesAttributes.fieldsQuery
 ];
 
-app.post('uploadFile', function (req, res) {
+app.post('/upload', function (req, res) {
     console.log(1);
     if (req.files && req.files.length > 0) {
         req.files['user_picture'].mv('./temp', function (err) {
@@ -43,6 +43,8 @@ app.post('uploadFile', function (req, res) {
             }
             res.send();
         });
+    } else {
+        res.status(500).send();
     }
 })
 

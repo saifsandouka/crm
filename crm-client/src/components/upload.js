@@ -4,10 +4,10 @@ function Upload() {
     const formSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
-        fetch('http://localhost:14700/uploadFile', {
+        fetch('http://localhost:14700/upload', {
             method: 'POST',
             headers: {
-                'Content-type': 'application/x-www-form-urlencoded'
+                'Content-type': 'multipart/form-data'
             },
             body: form
         }).then(r => console.log(r));
