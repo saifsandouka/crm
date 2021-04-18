@@ -25,7 +25,8 @@ router.post('/register', function (req, res) {
 
    userRepository.add({
       email: user,
-      pass: pass
+      pass: pass,
+      ownerid: req.User_Id
    }, function (err, success) {
       if (err || !success) {
          return res.status(400).send(err)
