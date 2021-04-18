@@ -11,7 +11,7 @@ function User() {
     *
     * @type {int}
     */
-   this.User_Id = null;
+   this.user_id = null;
    /**
     * Email of the user.
     *

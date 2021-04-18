@@ -9,7 +9,7 @@ router.post('/login', function (req, res) {
    const { user, pass } = req.body;
    userRepository.getByLogin(user, pass, function (err, theUser) {
       if (theUser) {
-         const token = jwt.sign({ User_Id: theUser.User_Id }, process.env.SECRET_KEY, {
+         const token = jwt.sign({ user_id: theUser.user_id }, process.env.SECRET_KEY, {
             expiresIn: '5h'
          });
          return res.send(token);
@@ -26,7 +26,7 @@ router.post('/register', function (req, res) {
    userRepository.add({
       email: user,
       pass: pass,
-      ownerid: req.User_Id
+      ownerid: req.user_id
    }, function (err, success) {
       if (err || !success) {
          return res.status(400).send(err)
