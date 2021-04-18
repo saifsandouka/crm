@@ -21,7 +21,7 @@ fs.readFile('./install/database.sql', 'utf8', function (err, data) {
          if (err) throw err;
          connection.query(data, function (err, res) {
             console.log(err || res);
-            process.exit(1);
+            process.exit(0);
          })
       });
 
