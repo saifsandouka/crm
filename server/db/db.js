@@ -18,7 +18,9 @@ function performSelect(query, values, callback) {
 }
 
 function performInsert() {
-
+   connection.query(query, values, function (err, results) {
+      callback(err, results);
+   });
 }
 
 function performDelete() {
