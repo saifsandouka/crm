@@ -28,7 +28,7 @@ router.post('/register', function (req, res) {
       pass: pass
    }, function (err, success) {
       if (err || !success) {
-         return res.status(400).send(ex)
+         return res.status(400).send(err)
       }
       res.status(201).send();
    });
