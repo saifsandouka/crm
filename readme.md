@@ -1,8 +1,8 @@
 # CRM Full stack project
 ## Run the project:
 - inside client folder: `npm i` and after `npm run build`
+- inside server folder: `npm run dbinstall` to create the database under the name `crm`
 - inside server folder: `npm i` and after `npm start` to run the server
-- 
 ## Important
 -   Every endpoint should have he's own file exported with `express.Router()`.
 -	All the endpoint controller should be inside the same directory
