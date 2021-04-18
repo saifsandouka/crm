@@ -17,7 +17,7 @@ function performSelect(query, values, callback) {
    });
 }
 
-function performInsert() {
+function performInsert(query, values, callback) {
    connection.query(query, values, function (err, results) {
       callback(err, results);
    });
