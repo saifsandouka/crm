@@ -19,6 +19,7 @@ app.use(cors());
 app.use(express.static('./client'));
 
 // attributes / middlewares
+const userCredentials = require('./attributes/user-credentials.attr');
 const authorizationAttribute = require('./attributes/authorization.attr');
 const quriesAttributes = require('./attributes/query.attribute');
 
@@ -27,25 +28,25 @@ const authCtrl = require('./controllers/auth.ctrl');
 const contactCtrl = require('./controllers/contact.ctrl');
 
 
-app.use('/auth', authCtrl);
+app.use('/auth', userCredentials, authCtrl);
 
 const middlewares = [
-    authorizationAttribute,
-    quriesAttributes.fieldsQuery
+   authorizationAttribute,
+   quriesAttributes.fieldsQuery
 ];
 
 app.post('/upload', function (req, res) {
-    console.log(1);
-    if (req.files && req.files.user_picture) {
-        req.files['user_picture'].mv(__dirname + '/uploads/' + req.files.user_picture.name, function (err) {
-            if (err) {
-                return res.status(500).send();
-            }
-            res.send();
-        });
-    } else {
-        res.status(500).send();
-    }
+   console.log(1);
+   if (req.files && req.files.user_picture) {
+      req.files['user_picture'].mv(__dirname + '/uploads/' + req.files.user_picture.name, function (err) {
+         if (err) {
+            return res.status(500).send();
+         }
+         res.send();
+      });
+   } else {
+      res.status(500).send();
+   }
 })
 
 app.use('/contact', ...middlewares, contactCtrl);

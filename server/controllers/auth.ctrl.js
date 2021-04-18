@@ -22,7 +22,6 @@ router.post('/login', function (req, res) {
 
 router.post('/register', function (req, res) {
    const { user, pass } = req.body;
-
    userRepository.add({
       email: user,
       pass: pass,
