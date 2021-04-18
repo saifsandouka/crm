@@ -22,14 +22,16 @@ router.post('/login', function (req, res) {
 
 router.post('/register', function (req, res) {
    const { user, pass } = req.body;
-   try {
-      userRepository.add({
-         email: user,
-         pass: pass
-      });
+
+   userRepository.add({
+      email: user,
+      pass: pass
+   }, function (err, success) {
+      if (err || !success) {
+         return res.status(400).send(ex)
+      }
       res.status(201).send();
-   } catch (ex) {
-      return res.status(400).send(ex)
-   }
+   });
+
 })
 module.exports = router;
