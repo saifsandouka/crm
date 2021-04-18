@@ -14,7 +14,7 @@ fs.readFile('./install/database.sql', 'utf8', function (err, data) {
       password: '',
       multipleStatements: true
    });
-   connection.query(`CREATE DATABASE ${dbNAme} CHARACTER SET utf8 COLLATE utf8_bin`, function (err, result) {
+   connection.query(`DROP DATABASE IF EXISTS ${dbNAme}; CREATE DATABASE ${dbNAme} CHARACTER SET utf8 COLLATE utf8_bin`, function (err, result) {
       if (err) throw err;
       console.log("Database created");
       connection.changeUser({ database: dbNAme }, function (err) {
