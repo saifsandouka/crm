@@ -7,7 +7,7 @@ fs.readFile('./install/database.sql', 'utf8', function (err, data) {
       return console.log(err);
    }
 
-   const dbNAme = 'crm2';
+   const dbNAme = 'crm';
    var connection = mysql.createConnection({
       host: '127.0.0.1',
       user: 'root',
