@@ -1,5 +1,5 @@
 # CRM Full stack project
-# Run the project:
+## Run the project:
 - inside client folder: `npm i` and after `npm run build`
 - inside server folder: `npm i` and after `npm start` to run the server
 - 
