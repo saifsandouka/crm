@@ -31,9 +31,16 @@ function performUpdate() {
 
 }
 
+function performQuery(query, values, callback) {
+   connection.query(query, values, function (err, results) {
+      callback(err, results);
+   });
+}
+
 module.exports = {
    performSelect,
    performInsert,
    performUpdate,
-   performDelete
+   performDelete,
+   performQuery
 }
