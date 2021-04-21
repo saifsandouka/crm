@@ -1,0 +1,14 @@
+{
+   "folders": [
+      {
+         "path": "./crm-client"
+      },
+      {
+         "path": "./server"
+      },
+      {
+         "path": "misc"
+      }
+   ],
+   "settings": {}
+}
