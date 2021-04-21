@@ -8,7 +8,7 @@ function Report() {
          },
       }).then(res => res.blob().then(blobRes => {
          const file = window.URL.createObjectURL(blobRes);
-         window.location.assign(file);;
+         window.location.assign(file);
       }));
    }
    return <div>
