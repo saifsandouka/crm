@@ -13,7 +13,7 @@ router.get('/contact-report', function (req, res) {
 
    ];
 
-   let file = arr.map(u => Object.entries(u).map(a => a[0]).join(',')) + os.EOL;
+   let file = Object.entries(u).map(a => a[0]) + os.EOL;
    file += arr.map(u => Object.entries(u).map(a => a[1]).join(',')).join(os.EOL);
    res.attachment('report.csv')
    res.type('csv')
