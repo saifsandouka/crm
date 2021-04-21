@@ -10,7 +10,7 @@ module.exports = function (req, res, next) {
          if (tokenData.role !== 'Admin') {
             return res.status(403).send(ex);
          }
-         next();
+         return next();
       }
       catch (ex) {
          return res.status(401).send(ex);

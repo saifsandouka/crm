@@ -35,7 +35,7 @@ function User() {
     *
     * @type {('Active' | 'Deleted' | 'Freezed')}
     */
-   this.status = null;
+   this.user_status = null;
    /**
     * User hashed password
     * @type {string}

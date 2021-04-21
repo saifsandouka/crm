@@ -22,13 +22,13 @@ app.use(express.static('./client'));
 const userCredentials = require('./attributes/user-credentials.attr');
 const authorizationAttribute = require('./attributes/authorization.attr');
 const quriesAttributes = require('./attributes/query.attribute');
+const adminOnlyAttribute = require('./attributes/admin-only.attr');
 
 // controllers
 const authCtrl = require('./controllers/auth.ctrl');
 const contactCtrl = require('./controllers/contact.ctrl');
 const reportCtrl = require('./controllers/report.ctrl');
 
-app.use('/reports', reportCtrl);
 
 app.use('/auth', userCredentials, authCtrl);
 
@@ -54,6 +54,7 @@ app.post('/upload', function (req, res) {
 app.use('/contact', ...middlewares, contactCtrl);
 app.use('/account', ...middlewares, contactCtrl);
 app.use('/user', ...middlewares, contactCtrl);
+app.use('/reports', ...middlewares, adminOnlyAttribute, reportCtrl);
 
 
 app.listen(PORT, () => console.log(`server started at port ${PORT}`));

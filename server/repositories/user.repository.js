@@ -44,7 +44,7 @@ function add(objModel, callback) {
    isEmailExist(objModel.email, function (err, res) {
       if (!res) {
          db.performInsert("INSERT INTO `users` (`email`, `pwd`, `role`, `user_status`, `user_owner`) VALUES (?, ?, ?, ?, ?)",
-            [objModel.email, md5(objModel.pass), 'Member', 'Active', objModel.ownerid], function (err, res) {
+            [objModel.email, md5(objModel.pass), objModel.role, 'Active', objModel.ownerid], function (err, res) {
                callback(err, res);
             })
       } else return callback('email exist');
