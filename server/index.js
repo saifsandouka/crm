@@ -52,10 +52,10 @@ app.post('/upload', function (req, res) {
    }
 })
 
-app.use('/contact', ...middlewares, contactCtrl);
-app.use('/account', ...middlewares, contactCtrl);
-app.use('/user', ...middlewares, contactCtrl);
-app.use('/reports', ...middlewares, adminOnlyAttribute, reportCtrl);
+app.use('/api/contact', ...middlewares, contactCtrl);
+app.use('/api/account', ...middlewares, contactCtrl);
+app.use('/api/user', ...middlewares, contactCtrl);
+app.use('/api/reports', ...middlewares, adminOnlyAttribute, reportCtrl);
 
 
 app.listen(PORT, () => console.log(`server started at port ${PORT}`));
